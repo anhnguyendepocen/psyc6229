@@ -16,17 +16,17 @@ curve( pbinom( x, size=20, prob=0.5 ), 0, 20, n=1000, main='binomial cdf' )
 
 ### the probability density function (pdf), probability mass function (pmf)
 
-# the normal pdf (continuous)
-curve( dnorm( x, mean=0, sd=1 ), -5, 5, main='normal pdf' )
-
-# the uniform pdf (continuous)
-curve( dunif( x, min=0, max=1 ), -0.5, 1.5, main='uniform pdf' )
-
 # the binomial pmf (discrete)
 x <- seq( 0, 20, 0.5 )
 y <- dbinom( x, size=20, prob=0.5 )
 plot( x, y, type='h', main='binomial pmf' )
 # curve( dbinom( x, size=20, prob=0.5 ), 0, 20, n=1000 )
+
+# the normal pdf (continuous)
+curve( dnorm( x, mean=0, sd=1 ), -5, 5, main='normal pdf' )
+
+# the uniform pdf (continuous)
+curve( dunif( x, min=0, max=1 ), -0.5, 1.5, main='uniform pdf' )
 
 # see ?distributions for more
 

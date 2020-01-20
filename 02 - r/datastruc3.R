@@ -24,17 +24,21 @@ attributes( x )$subject
 # - use special three functions to access them, instead of attr()
 
 # special attribute 1:  names
-x <- c( 1, 2, 3 )
-attr( x, 'names' ) <- c( 'a', 'b', 'c' )  # illustrative, but not really ok
-names( x ) <- c( 'a', 'b', 'c' )          # correct way of setting names
-names( x )
-attributes( x )
-x[ 'a' ]
 
-# or can set names when creating the vector
-x = c( a=1, b=2, c=3 )
-names( x )
+# usually set names when creating the vector
+x = c( u=1, v=2, w=3 )
+x[ 'u' ]
 attributes( x )
+names( x )
+
+# we can understand how this is implemented by setting the attribute manually
+x <- c( 1, 2, 3 )
+attr( x, 'names' ) <- c( 'u', 'v', 'w' )  # illustrative, but not really ok
+names( x ) <- c( 'u', 'v', 'w' )          # correct way of setting names
+attributes( x )
+names( x )
+x[ 'u' ]
+
 
 # special attribute 2:  dimension
 
@@ -44,7 +48,7 @@ x <- 1:10      # atomic vector
 is.atomic( x )
 is.matrix( x )
 dim( x )
-dim( x ) <- c( 2, 5 )    # alternative way of making x into a matrix
+dim( x ) <- c( 2, 5 )    # alternative to using matrix()
 x
 attributes( x )
 is.atomic( x )
@@ -56,11 +60,11 @@ ncol( x )
 # can also add attributes to name the rows and columns of a matrix
 rownames( x ) <- c( 'a', 'b' )
 colnames( x ) <- c( 'p', 'q', 'r', 's', 't' )
+x
 x[ 'a', 'q' ]
 attributes( x )
 attributes( x )$dimnames
 attributes( x )$dimnames[[1]]
-x
 
 # special attribute 3:  class (important in object oriented programming)
 class( x )
