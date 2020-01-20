@@ -1,2 +1,4 @@
-# psyc6229
-PSYC 6229 -- Statistical modelling of perception and cognition
+
+### Upcoming events
+
+**January 28.**  Problem set 1 posted; due three weeks later
