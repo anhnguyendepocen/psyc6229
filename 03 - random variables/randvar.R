@@ -2,14 +2,14 @@
 
 ### the cumulative distribution function (cdf)
 
+# the binomial cdf (discrete)
+curve( pbinom( x, size=20, prob=0.5 ), 0, 20, n=1000, main='binomial cdf' )
+
 # the normal cdf (continuous)
 curve( pnorm( x, mean=0, sd=1 ), -5, 5, main='normal cdf' )
 
 # the uniform cdf (continuous)
 curve( punif( x, min=0, max=1 ), -1, 2, main='uniform cdf' )
-
-# the binomial cdf (discrete)
-curve( pbinom( x, size=20, prob=0.5 ), 0, 20, n=1000, main='binomial cdf' )
 
 # see ?distributions for more
 
@@ -34,6 +34,10 @@ curve( dunif( x, min=0, max=1 ), -0.5, 1.5, main='uniform pdf' )
 ### the cdf is the integral of the pdf
 
 # define our own standard normal cdf as the integral of R's standard normal pdf
+
+# normcdf <- function( x )
+#     return( integrate( dnorm, -Inf, x )$value )
+
 normcdf <- function( x ) {
     p <- rep( NaN, length(x) )
     for( i in 1:length(x) )
