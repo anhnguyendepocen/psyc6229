@@ -83,7 +83,7 @@ curve( (1/sigma)*dnorm( (x-mu)/sigma          ), 5, 15, type='p', col='red', add
 
 ### empirical pdf and cdf
 
-x = rnorm( 1000 )
+x = rnorm( 50 )
 hist( x, probability=TRUE )  # empirical pdf; probability=TRUE ensures area = 1
 plot( ecdf( x ) )            # empirical cdf; ecdf returns a function
 
