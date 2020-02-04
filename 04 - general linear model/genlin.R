@@ -26,13 +26,13 @@ plot( y, yhat, type='p', col='red', xlim=c(mn,mx), ylim=c(mn,mx) )
 lines( c(mn,mx), c(mn,mx), type='l', lty=2 )
 
 # repeat the fit using R's lm() function, which is numerically more stable
-fit <- lm( y ~ X - 1 )                    # fit a linear model with y-intercept set to zero
-betahat <- fit$coefficients               # get the regression coefficients
+m <- lm( y ~ X - 1 )                    # fit a linear model with y-intercept set to zero
+betahat <- m$coefficients               # get the regression coefficients
 print( cbind( beta, betahat ) )           # check the solution
 
 # lm() also returns confidence intervals for the coefficients, and much more
 # information as well -- see ?lm and str( fit )
-cint <- confint( fit, level=0.95 )
+cint <- confint( m, level=0.95 )
 
 # note that even with the general linear model, we can model the dependent variable
 # as a nonlinear function of the independent variables.  we just add new independent
@@ -46,9 +46,12 @@ beta <- c( 0.5, 1, 2 )                        # coefficients
 y <- X %*% beta + rnorm( length(x), sd=0.1 )  # dependent variables
 
 # find regression coefficients
-fit <- lm( y ~ X - 1 )
-betahat <- fit$coefficients
+m <- lm( y ~ X - 1 )
+betahat <- m$coefficients
+print( cbind( beta, betahat ) )
 
 # plot data and fitted curve
 plot( x, y, type='p', col='red' )
-curve( betahat[1] + betahat[2]*x + betahat[3]*x^2, col='green', xlim=c(-1,1), add=TRUE )
+lines( x, predict( m ), col='green' )
+# predict( m ) returns the fitted model's predictions for the y values
+# corresponding to the x values in the dataset

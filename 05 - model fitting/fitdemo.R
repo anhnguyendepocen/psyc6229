@@ -29,9 +29,7 @@ phat <- optim( pinit, obj )$par    # find the parameters of the best fit
 # plot data and fitted PSE function
 plot( df$stimlev, df$phigher, col='red', ylim=c(-0.1,1.1), xlab='stimulus level', ylab='proportion judged higher', main='PSE function' )
 curve( psyfn( x, phat[1], phat[2] ), from=0, to=1, col='green', add=TRUE )
-print( phat[1] )
-print( phat[2] )
-
+print( phat )
 
 # 2.  fit a psychometric function using nls()
 
@@ -42,5 +40,4 @@ phat <- coef( m )
 # plot data and fitted PSE function
 plot( df$stimlev, df$phigher, col='red', ylim=c(-0.1,1.1), xlab='stimulus level', ylab='proportion judged higher', main='PSE function' )
 curve( pnorm( x, mean=phat[1], sd=phat[2] ), from=0, to=1, col='green', add=TRUE )
-print( phat[1] )
-print( phat[2] )
+print( phat )
