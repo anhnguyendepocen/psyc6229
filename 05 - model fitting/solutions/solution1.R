@@ -44,7 +44,7 @@ xval <- function( f, x, y, pinit, nblocks=10 ) {
 		Sys.sleep( 0.1 )
 		
 	}
-
+    
 	# return average training and validation error
 	return( list( errt=mean( errt ), errv=mean( errv ) ) )
 
