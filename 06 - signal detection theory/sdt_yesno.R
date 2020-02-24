@@ -1,4 +1,4 @@
-# sdt1.R  Simulation of a signal detection model of a yes-no task
+# sdt_yesno.R  Simulation of a signal detection model of a yes-no task
 
 # clear workspace
 rm( list=ls() )
