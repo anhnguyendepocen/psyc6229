@@ -1,5 +1,5 @@
 
 ### Upcoming events
 
-**February 25.**  Problem set 1 due
+**March 24.**  Problem set 2 due
 
