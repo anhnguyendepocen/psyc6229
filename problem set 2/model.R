@@ -15,16 +15,15 @@ subject <- function( stimlev, ntrials ) {
   df <- data.frame( stim=init, response=init )
   
   # run trials
-  u <- 1
   for( i in 1:length(stimlev) ) {
-    v <- u + ntrials[i] - 1
+    u <- 1 + sum( ntrials[0:(i-1) ] )
+    v <- sum( ntrials[1:i] )
     df$stim[u:v] <- stimlev[i]
     df$response[u:v] <- rbinom( ntrials[i], 1, pcorrect[i] )
-    u <- u + ntrials[i]
   }
 
   # randomize order of trials
-  df <- df[ sample(1:ntotal,ntotal), ]
+  # df <- df[ sample(1:ntotal,ntotal), ]
 
   return( df )
   
