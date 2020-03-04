@@ -23,7 +23,7 @@ subject <- function( stimlev, ntrials ) {
   }
 
   # randomize order of trials
-  # df <- df[ sample(1:ntotal,ntotal), ]
+  df <- df[ sample(1:ntotal,ntotal), ]
 
   return( df )
   
