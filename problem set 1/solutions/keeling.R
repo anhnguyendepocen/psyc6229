@@ -23,7 +23,8 @@ for( i in 1:length(yearvec) )
     co2vec[i] <- mean( df$co2_fill[ df$year==yearvec[i] ] )
 
 # plot it
-plot( yearvec, co2vec, type='p', xlab='year', ylab='CO2 concentration (ppm)', main='CO2 by year' )
+plot( yearvec, co2vec, type='p', col='red',
+      xlab='year', ylab='CO2 concentration (ppm)', main='CO2 by year' )
 
 # but R has specialized functions available that make many common data processing operations
 # like this much easier.  here we'll use the aggregate() function.
