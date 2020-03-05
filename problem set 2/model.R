@@ -4,7 +4,7 @@ subject <- function( stimlev, ntrials ) {
 
   # check arguments  
   if( length(stimlev) != length(ntrials ) )
-    stop( 'arguments stimlev and trials must have same length' )
+    stop( 'arguments stimlev and ntrials must have same length' )
 
   # find proportion correct at each stimulus level
   pcorrect <- pweibull( stimlev, 2.5, 3 )
